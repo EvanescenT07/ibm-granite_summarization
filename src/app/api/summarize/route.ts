@@ -227,7 +227,6 @@ ${textToSummarize}
 
 Berikan ringkasan yang terstruktur, informatif, dan mudah dipahami:`;
 
-    console.log("Calling Replicate API...");
     const model = "ibm-granite/granite-3.3-8b-instruct";
     const output = await replicate.run(model, {
       input: {
@@ -239,7 +238,6 @@ Berikan ringkasan yang terstruktur, informatif, dan mudah dipahami:`;
     });
 
     const summary = Array.isArray(output) ? output.join("") : String(output);
-    console.log("Summary generated, length:", summary.length);
 
     // Update document record with success
     await prisma.document.update({
