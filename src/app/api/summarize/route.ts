@@ -15,7 +15,7 @@ if (!process.env.REPLICATE_API_TOKEN) {
 }
 
 // GET method for testing
-export async function GET(req: NextRequest) {
+export async function GET() {
   try {
     const session = await getServerSession(authentication);
 
